@@ -1,2 +1,2 @@
-export * as VarianceActions from './varianceActions'
-export * as FilterActions from './filterActions'
+export * as ResultsActions from './resultsActions'
+export * as FiltersActions from './filtersActions'

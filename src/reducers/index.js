@@ -1,3 +1,5 @@
-export * from './filtersReducer';
-export * from './variancesReducer';
-export * from './QueryComponentReducer';
+import QueryComponentReducer from './QueryComponentReducer';
+import filtersReducer from './filtersReducer';
+import resultsReducer from './resultsReducer';
+
+export { QueryComponentReducer, filtersReducer, resultsReducer }

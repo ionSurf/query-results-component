@@ -1,4 +1,4 @@
-import * as actions from '../constants/filterActions'
+import * as actions from '../constants/filtersActions'
 export default function filterReducer(state, action) {
   switch( action.type ) {
     case actions.FETCH_FILTER:

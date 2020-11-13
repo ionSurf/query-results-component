@@ -2,7 +2,7 @@ import { useReducer } from "react";
 
 export default function QueryComponentReducer(state, action) {
   return {
-    variances: useReducer(state.variances, action),
+    results: useReducer(state.results, action),
     filters: useReducer(state.filters, action),
   };
 }

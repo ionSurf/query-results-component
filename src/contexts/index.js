@@ -1,2 +1,1 @@
-export * from './variancesContext'
-export * from './filtersContext'
+export * from './QueryComponentContext'

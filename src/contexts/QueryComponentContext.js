@@ -2,7 +2,7 @@ import React from "react";
 
 export const QueryComponentContext = React.createContext({
   state: {
-    variances: {
+    results: {
       collection: [],
       sortBy: "",
     },
@@ -14,8 +14,8 @@ export const QueryComponentContext = React.createContext({
       associateName: [],
       areaOrDep: [],
       locations: [],
-      varianceTypes: [],
-      variancesStatus: [],
+      resultTypes: [],
+      resultStatus: [],
       initiatedBy: [],
     },
   },
