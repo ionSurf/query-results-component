@@ -1,5 +1,5 @@
-import { useState } from 'react';
 import BottomNaviView from './BottomNaviView'
+import { DropdownLinksMenu } from '../../../../theme/forms'
 
 const IN_PROGRESS_ICON = 'IN_PROGRESS_ICON';
 const ERROR_ICON = 'ERROR_ICON';
@@ -49,36 +49,6 @@ const textCellView = cData => {
     <span>{cData.data}</span>)
 }
 
-const DropdownLinksMenu = ({ options, selectedOption }) => {
-  const [value, setValue] = useState(selectedOption);
-
-  return (
-    <div className="dropdown show">
-      <a className="btn btn-white btn-sm dropdown-toggle" href="./" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        {value}
-      </a>
-
-      <div className="dropdown-menu" aria-labelledby="dropdownMenuLink">
-        {options.map((o, k) => (
-          <a key={k} className="dropdown-item" href="./" onClick={e => setValue(o)}>{o}</a>
-        ))}
-      </div>
-    </div>
-  )
-}
-
-const DropdownMenu = ({ options, selectedOption }) => {
-  const [option, setOption] = useState(selectedOption);
-
-  return (
-    <select value={option} className="custom-select" id="validationCustom04" onChange={e => setOption(e.target.value)} required>
-      { options.map((o, k) => (
-        <option value={o}>{o}</option>
-      ))}
-    </select>
-  )
-}
-
 const dropdownCellView = cData => (
   <DropdownLinksMenu
     options={cData.values}
@@ -108,7 +78,7 @@ const cellDataSwitcher = (c) => {
 
 const tableBodyRowsView = bRows => (
   bRows.map((r, rk) => (
-    <tr key={rk} style={{ ...r.rowStyle }} {...r.rowActions} >
+    <tr className="align-middle" key={rk} style={{ ...r.rowStyle }} {...r.rowActions} >
       { r.rowContent.map((c, ck) => (
         <td key={ck} style={{ ...c.cellStyle }} {...c.actions} >
           { cellDataSwitcher(c)}
@@ -153,7 +123,8 @@ export const QueryResultsTableView = ({ headers, bodyRows }) => (
         </div>
       </div>
       <div className="row">
-        {BottomNaviView()}
+        <BottomNaviView
+          header={'Query results footer (navigation)'} />
       </div>
     </div>
   </div>
